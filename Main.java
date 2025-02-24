@@ -22,7 +22,18 @@ public class Main
    */
   public static int countSecondInitial(ArrayList<String> arr, String letter)
   {
-    return 0;
+    int count = 0;
+    for (String word : arr)
+    {
+      if (word.length() >= 2)
+      {
+        if (word.substring(1,2).equals(letter))
+        {
+          count ++;
+        }
+      }
+    }
+    return count;
   }
 
   /** Returns the index of the second occurrence of target within the ArrayList
@@ -31,6 +42,18 @@ public class Main
    */
   public static int searchSecond(final ArrayList<String> arr, String target)
   {
+    int count = 0; 
+    for (int i = 0; i < list.size(); i++)
+    {
+      if (list.get(i).equals(target))
+      {
+        count ++;
+        if (count == 2)
+        {
+          return i; 
+        }
+      }
+    }
     return -1;
   }
 }
